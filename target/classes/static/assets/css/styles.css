@@ -1,0 +1,189 @@
+html,
+body {
+	background: #e6eef0;
+	min-height: 1vh;
+}
+
+
+/*
+ * Layout
+ */
+
+.content {
+	padding: 40px 50px;
+    margin-left: 90px;
+}
+.primary-section {
+    margin: 20px -50px;
+
+    background-color: #fff;
+    border-top: 1px solid #dddbda;
+    border-bottom: 1px solid #dddbda;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+}
+
+
+ /*
+ * Header
+ */
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 90px;
+	z-index: 9050;
+	background-color: #182a2f;
+	transition: width 0.5s;
+}
+.header-expanded {
+	width: 320px;
+}
+
+
+
+/* Logo */
+
+.logo {
+	position: absolute;
+	left: 24px;
+	top: 40px;
+}
+.logo-sign {
+	z-index: 1;
+}
+.logo-sign,
+.logo-sign img {
+	width: 45px;
+	height: 47px;
+}
+
+.logo-full {
+	z-index: 2;
+	background-color: #182a2f;
+
+	left: -400px;
+	opacity: 0;
+}
+.header.header-expanded .logo-full {
+	left: 24px;
+	opacity: 1;
+	transition: opacity 0.5s;
+	transition-delay: 0.3s
+}
+.logo-full,
+.logo-full img {
+	width: 194px;
+	height: 63px;
+}
+
+
+/* Nav */
+
+.nav-sign {
+	position: absolute;
+	top: 130px;
+	left: 31px;
+	width: 30px;
+	text-align: center;
+}
+.header.header-expanded .nav-sign {
+	display:none;
+}
+.nav-sign .slds-icon {
+	fill: #e3ebed;
+	cursor: pointer;
+}
+
+
+.nav {
+	position: absolute;
+	top: 145px;
+	left: -400px;
+	width: 100%;
+	opacity: 0;
+}
+.header.header-expanded .nav {
+	left: 0;
+	opacity: 1;
+	transition: opacity 0.5s;
+	transition-delay: 0.3s
+}
+
+.nav a {
+	display: block;
+	padding: 0 30px;
+	height: 50px;
+
+	font-size: 16px;
+	line-height: 50px;
+	color: #e3ebed;
+	text-decoration: none;
+}
+.nav a:hover {
+    color: #fff;
+	background-color: #20353b;
+}
+.nav a.active,
+.nav a.active:hover {
+	color: #444;
+	background-color: #e3ebed;
+}
+
+
+/* UserInfo */
+
+.userinfo {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	border-top: 1px solid #3f5964;
+}
+.userinfo-icon {
+	position: absolute;
+	top: 25px;
+	left: 28px;
+
+	width: 30px;
+	height: 30px;
+	background-color: #e71c50;
+	border-radius: 50%;
+	text-align: center;
+}
+.userinfo-icon .slds-icon {
+	margin-top: 6px;
+	fill: #fff;
+	cursor: pointer;
+}
+
+.userinfo-menu {
+	position: absolute;
+	left: -400px;
+	top: 28px;
+	opacity: 0;
+
+	font-size: 14px;
+}
+.header.header-expanded .userinfo-menu {
+	left: 75px;
+	opacity: 1;
+	transition: opacity 0.5s;
+	transition-delay: 0.3s
+}
+
+.userinfo-username {
+	margin-bottom: 15px;
+	color: #fff;
+}
+.userinfo-menu a {
+	display: block;
+    font-size: .8rem;
+	color: #e3ebed;
+}
+.userinfo-menu a + a {
+	margin-top: 5px;
+}
+

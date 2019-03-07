@@ -1,0 +1,1 @@
+cmd /k "SET "ADB_DATABASE_URL=postgres://xmrhqvsshvqjug:e510fd007df5f81c7d0ddc71d4c99cb8e94bfc5d65213495d26774fa7cbf1012@ec2-54-163-230-178.compute-1.amazonaws.com:5432/d7tas1qekm8pdq" & cd F:\Work\freelance\archiver\cervello-archiver-admin-ui & mvn spring-boot:run"

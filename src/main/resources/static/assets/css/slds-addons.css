@@ -1,0 +1,165 @@
+
+a[href],
+button {
+	cursor: pointer;
+}
+
+label[for] {
+	cursor: pointer;
+}
+
+.slds-select[size] {
+    height:0;
+}
+
+
+/*
+ * Icons
+ */
+
+a.slds-button_icon-brand,
+a.slds-button_icon-container,
+a.slds-button_icon-border-filled,
+a.slds-button_icon-border,
+a.slds-button_icon-border-inverse {
+	line-height: calc(2rem - 2px);
+}
+
+
+
+
+/*
+ * Button Large
+ */
+
+.slds-button--large,
+.slds-button_large {
+	line-height: 3rem;
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+
+/*
+ * Small Bage
+ */
+
+.slds-badge--small,
+.slds-badge_small {
+	padding:.08rem .4rem;
+}
+
+
+/*
+ * Pagination
+ */
+
+.slds-pagination {}
+
+.slds-pagination_page-info {
+	white-space: nowrap;
+	line-height: calc(1.875rem + 2px);
+}
+.slds-pagination .slds-button {
+	position: static;
+}
+.slds-pagination .slds-button--neutral,
+.slds-pagination .slds-button_neutral,
+.slds-pagination .slds-button--brand,
+.slds-pagination .slds-button_brand {
+	padding-left: .8rem;
+	padding-right: .8rem;
+}
+.slds-pagination .slds-button .slds-button__icon_right,
+.slds-pagination .slds-button .slds-button__icon--right {
+	margin-left: .2rem;
+}
+.slds-pagination .slds-button .slds-button__icon_left,
+.slds-pagination .slds-button .slds-button__icon--left {
+	margin-right: .2rem;
+}
+
+.slds-pagination_pages {
+}
+
+.slds-pagination_page-selector {
+}
+.slds-pagination_page-selector .slds-input {
+	width: 60px;
+	text-align: center;
+	padding: 0 .5rem;
+}
+
+
+
+/*
+ * Custom Forms
+ */
+
+.slds-checkbox_align-by-side {
+	margin-top:1.7rem !important;
+}
+
+.slds-checkbox_toggle-container {
+	padding: .5rem 0;
+}
+.slds-checkbox_toggle-container .slds-form-element__control {
+	display: inline-block;
+}
+
+.slds-checkbox_cross-align label {
+	justify-content: space-between;
+}
+
+.slds-radiogroup_hidden-label {}
+.slds-radiogroup_hidden-label legend {
+	display: none;
+}
+.slds-radiogroup_spread {}
+.slds-radiogroup_spread .slds-radio + .slds-radio {
+	margin-top: 7px;
+}
+
+
+
+
+/*
+ * Workaround Modal
+ */
+
+.slds-modal-backdrop {
+	background: rgba(43, 40, 38, 0.6);
+}
+
+.slds-modal_fullscreen {
+	padding: 140px 1rem 3rem;
+}
+.slds-modal_fullscreen .slds-modal__container {
+	padding: 0;
+	width: auto;
+	max-width: none;
+}
+
+
+
+/*
+ * Workaround Alesrt / Toasts / Notify
+ */
+
+.slds-notify--toast,
+.slds-notify_toast {
+    min-width: 0 !important; /* override SLDS [.slds-notify_toast] style */
+}
+
+
+
+/*
+ * Wrap / NoWrap
+ */
+
+.slds-text-nowrap {
+	white-space: nowrap;
+}
+.slds-text-wrap {
+	white-space: normal;
+}

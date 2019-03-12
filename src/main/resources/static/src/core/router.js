@@ -55,6 +55,14 @@ routes.push({
     component: AppConfiguraion
 });
 
+// Object Configuration
+import ObjectConfiguration from '../pages/object-configuration/';
+routes.push({
+    path: '/object-configuration',
+    name: 'objectConfiguration',
+    component: ObjectConfiguration
+});
+
 // 404
 import NotFound from '../pages/404/';
 routes.push({

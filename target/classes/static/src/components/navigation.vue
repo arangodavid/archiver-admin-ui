@@ -19,6 +19,7 @@
                 <router-link :to="{name: 'relationshipManager'}" active-class="active" @click="close">Relationship Manager</router-link>
                 <router-link :to="{name: 'jobLogs'}" active-class="active" @click="close">Job Logs</router-link>
                 <router-link :to="{name: 'appConfiguraion'}" active-class="active" @click="close">App Configuraion</router-link>
+                <router-link :to="{name: 'objectConfiguration'}" active-class="active" @click="close">Object Configuration</router-link>
             </div>
 
 

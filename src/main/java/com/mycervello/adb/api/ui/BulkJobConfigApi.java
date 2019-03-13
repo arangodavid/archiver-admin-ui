@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -26,26 +27,46 @@ public class BulkJobConfigApi {
 	//Variables
 	//
 	@Autowired
-	private BulkJobConfigRepository bulkJobConfigDao;
+	private BulkJobConfigRepository bulkJobConfigRepo;
 	//
 
 	//
 	//Public methods
 	//
+	/**
+	 * @return OperationResults with list of BulkJobConfig entities.
+	 */
 	@GetMapping(value = "getAll")
 	public OperationResults getAll() {
-		return OperationResults.newSuccess(bulkJobConfigDao.findAll());
+		return OperationResults.newSuccess(bulkJobConfigRepo.findAll());
 	}
 	
+	/**
+	 * @param Integer id of a BulkJobConfig entity
+	 * @return
+	 */
+	@GetMapping(value = "getById")
+	public OperationResults getById(@RequestParam Integer id) {
+		return OperationResults.newSuccess(bulkJobConfigRepo.findById(id));
+	}
+	
+	/**
+	 * @param BulkJobConfig entity
+	 * @return OperationResults with id of a saved entity.
+	 */
 	@PostMapping(value = "save")
 	public OperationResults save(@RequestBody BulkJobConfig config) {
 		//TODO: we must check condition before to save the config
-		return JpaUtilsForApi.save(bulkJobConfigDao, config);
+		return JpaUtilsForApi.save(bulkJobConfigRepo, config);
 	}
 	
+	/**
+	 * @param Integer id of a BulkJobConfig entity
+	 * @return OperationResults with id of a deleted entity.
+	 */
 	@PostMapping(value = "delete")
 	public OperationResults delete(@RequestBody Integer id) {
-		return JpaUtilsForApi.delete(bulkJobConfigDao, id);
+		return JpaUtilsForApi.delete(bulkJobConfigRepo, id);
 	}
 	//
 }

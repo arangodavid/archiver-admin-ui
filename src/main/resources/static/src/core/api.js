@@ -32,5 +32,25 @@ export default {
             method: 'POST',
             body: data
         });
+    },
+
+    getAppConfiguration: () => {
+        return Query('/ui-api/appSettings/getAll', {
+            method: 'GET'
+        });
+    },
+
+    saveSfUserCredentials: (data) => {
+        return Query('/ui-api/appSettings/saveSfUserCredentials', {
+            method: 'POST',
+            body: data
+        });
+    },
+
+    saveBaseUrl: (data) => {
+        return Query('/ui-api/appSettings/saveList', {
+            method: 'POST',
+            body: data
+        });
     }
 }

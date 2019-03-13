@@ -22,15 +22,18 @@ public class JobLogApi {
 	//Variables
 	//
 	@Autowired
-	private JobLogRepository jobLogRepository;
+	private JobLogRepository jobLogRepo;
 	//
 
 	//
 	//Public methods
 	//
+	/**
+	 * @return OperationResults with list of the JobLog entities.
+	 */
 	@GetMapping(value = "/getAll")
 	public OperationResults getAll() {
-		return OperationResults.newSuccess(jobLogRepository.findAll());
+		return OperationResults.newSuccess(jobLogRepo.findAll());
 	}
 	//
 }

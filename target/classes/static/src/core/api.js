@@ -32,5 +32,11 @@ export default {
             method: 'POST',
             body: data
         });
+    },
+
+    getAppConfiguration: () => {
+        return Query('/ui-api/appSettings/getAll', {
+            method: 'GET'
+        });
     }
 }

@@ -11,6 +11,12 @@ import com.mycervello.adb.jpa.utils.IEntityWithId;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
+/**
+ * Entity for the table with Job Logs.
+ * 
+ * @author Gennadiy Pervukhin
+ * @created 06-03-2019
+ */
 @Entity
 @Table(name = "job_log", schema = DbSchema.ARCHIVE)
 public class JobLog implements IEntityWithId {

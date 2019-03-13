@@ -19,6 +19,9 @@ public class SqlUtilsApi {
 	//
 	//Public methods
 	//
+	/**
+	 * @return OperationResults with true/false value.
+	 */
 	@GetMapping(value = "checkCondition")
 	public OperationResults checkCondition() {
 		return OperationResults.notImplementedError();

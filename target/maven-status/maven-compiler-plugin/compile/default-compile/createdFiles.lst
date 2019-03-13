@@ -1,6 +1,7 @@
 com/mycervello/adb/api/ui/JobLogApi.class
 com/mycervello/adb/helpers/exception/ExceptionUtils.class
 com/mycervello/adb/jpa/entity/BulkJobConfig.class
+com/mycervello/adb/jpa/entity/AppSetting.class
 com/mycervello/adb/jpa/repository/BulkJobConfigRepository.class
 com/mycervello/adb/api/ui/BulkJobConfigApi.class
 com/mycervello/adb/HerokuArchiving2Application.class
@@ -12,13 +13,18 @@ com/mycervello/adb/api/JpaUtilsForApi.class
 com/mycervello/adb/helpers/dto/JobStatus.class
 com/mycervello/adb/jpa/utils/IEntityWithId.class
 com/mycervello/adb/helpers/dto/JobVolume.class
+com/mycervello/adb/helpers/dto/SfObjectName.class
+com/mycervello/adb/api/ui/ArchiverConfigApi.class
+com/mycervello/adb/jpa/repository/AppSettingRepository.class
 com/mycervello/adb/helpers/datatype/DatetimeUtils.class
 com/mycervello/adb/config/spring/WebSecurityConfig.class
 com/mycervello/adb/config/spring/DbConfig.class
 com/mycervello/adb/helpers/datatype/StringUtils.class
 com/mycervello/adb/config/AppSettings.class
 com/mycervello/adb/helpers/db/DbSchema.class
+com/mycervello/adb/helpers/dto/SfUserCredentials.class
 com/mycervello/adb/config/AppProps.class
 com/mycervello/adb/jpa/entity/JobLog.class
 com/mycervello/adb/jpa/repository/JobLogRepository.class
+com/mycervello/adb/api/ui/AppSettingsApi.class
 com/mycervello/adb/api/ui/SqlUtilsApi.class

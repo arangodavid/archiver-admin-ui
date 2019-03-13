@@ -6,6 +6,12 @@ import com.mycervello.adb.helpers.db.DbSchema;
 import com.mycervello.adb.helpers.dto.JobAction;
 import com.mycervello.adb.jpa.utils.IEntityWithId;
 
+/**
+ * Entity for the table with Bulk Job Configurations.
+ * 
+ * @author Gennadiy Pervukhin
+ * @created 06-03-2019
+ */
 @Entity
 @Table(name = "bulk_job_config", schema = DbSchema.ARCHIVE)
 public class BulkJobConfig implements IEntityWithId {

@@ -2,10 +2,19 @@
     <section>
         <h1 class="slds-text-heading_large slds-m-bottom_x-large">Object Configuration</h1>
         <section class="primary-section">
-            <form @submit.prevent="saveSoapObj" class="slds-form-element__form">
+            <form v-show="!soapObjs" @submit.prevent="saveSoapObj" class="slds-form-element__form">
                 <label class="slds-form-element__label">{{ title }}</label>
-                <input class="slds-form-element__input" type="text" v-model="description"/>
+                <input class="slds-form-element__input" type="text" v-model="newSoapObj"/>
                 <input class="slds-button slds-button_brand slds-form-element__save" type="submit" value="add" />
+            </form>
+            <form class="slds-form-element__form" 
+                    v-show="soapObjs" 
+                    @submit.prevent="deleteSoapObj" 
+                    v-for="(soapObj, index) in soapObjs"
+            >
+                <label class="slds-form-element__label">{{ title }}</label>
+                <input class="slds-form-element__input" type="text" :value="soapObj" :key="index"/>
+                <input class="slds-button slds-button_brand slds-form-element__save" type="submit" value="Delete" />
             </form>
         </section>
     </section>
@@ -20,30 +29,53 @@
     	data() {
     		return {
     			title: 'SOAP Object Configuration',
-    			description: null
+    			newSoapObj: null,
+                soapObjs: ['soapObjectOne', 'soapObjectTwo', 'soapObjectThree', 'soapObjectFour', 'soapObjectFive', 'soapObjectSix'],
+                soapObjErrors: []
     		}
     	},
     	methods: {
             checkSoapObjErrors() {
-
+                if(this.newSoapObj) {
+                    this.soapObjErrors = [];
+                    return false;
+                }else {
+                    if(!this.newSoapObj) this.soapObjErrors.push('SOAP Object Required');
+                    return true;
+                }
             },
 
             loadSoapObj() {
+                EM.$emit(PageLoader.SHOW);
+                API.getSoapObj().then(data => {
+                    EM.$emit(PageLoader.HIDDEN);
+                    this.soapObjs = data;
+                });
 
             },
 
             saveSoapObj() {
                 if(!checkSoapObjErrors()) {
-                    
+                    EM.$emit(PageLoader.SHOW);
+                    let saveSoapObj = this.newSoapObj;
+                    API.saveSoapObj(saveSoapObj).then(data => {
+                        EM.$emit(PageLoader.HIDDEN);
+                        console.log(data);
+                    });
                 }
 
             },
-            deleteSoapObj() {
+            deleteSoapObj() {//Need to come back to this, how to tell which 'delete' bttn corresponds to which inout field
+                EM.$emit(PageLoader.SHOW);
+                API.deleteSoapObj(soapObjToDelete).then(data => {
+                    EM.$emit(PageLoader.HIDDEN);
+                    console.log(data);
+                });
 
             }
         },
         mounted() {
-
+            // this.loadSoapObj(); //Waiting on final Object-Configuration end-point API
         }
     }
 </script>

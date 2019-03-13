@@ -34,6 +34,7 @@ export default {
         });
     },
 
+    //app-configuration
     getAppConfiguration: () => {
         return Query('/ui-api/appSettings/getAll', {
             method: 'GET'
@@ -49,6 +50,27 @@ export default {
 
     saveBaseUrl: (data) => {
         return Query('/ui-api/appSettings/saveList', {
+            method: 'POST',
+            body: data
+        });
+    },
+
+    //object-configuration
+    getSoapObj: () => {
+        return Query('/ui-api/soapObject/getAll', {
+            method: 'GET'
+        });
+    },
+
+    saveSoapObj: (data) => {
+        return Query('/ui-api/soapObject/save', {
+            method: 'POST',
+            body: data
+        });
+    },
+
+    deleteSoapObj: (data) => {
+        return Query('/ui-api/soapObject/delete', {
             method: 'POST',
             body: data
         });

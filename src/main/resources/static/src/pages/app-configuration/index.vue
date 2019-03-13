@@ -80,7 +80,7 @@
     			}
     		},
 
-            loadCredentials() {
+            loadCredentials() { //Receiving access errors status: 500(server error)
                 EM.$emit(PageLoader.SHOW);
                 API.getAppConfiguration().then(data => {
                     EM.$emit(PageLoader.HIDE);

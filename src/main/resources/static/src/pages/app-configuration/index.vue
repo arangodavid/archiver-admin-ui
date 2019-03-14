@@ -12,7 +12,11 @@
     	<h1 class="slds-text-heading_large slds-m-bottom_x-large">App Configuration</h1>
     	<section class="primary-section">
     		<section v-show="this.baseSfUrlErrors.length">
-    			<p class="errors" v-for="baseSfUrlError in baseSfUrlErrors">{{baseSfUrlError}}</p>
+    			<p class="errors" 
+                    v-for="baseSfUrlError in baseSfUrlErrors"
+                >
+                    {{baseSfUrlError}}
+                </p>
     		</section>
 	        <form @submit.prevent="saveBaseSfUrl" class="slds-form-element__form">
 	        	<label class="slds-form-element__label">{{ title }}</label>
@@ -122,7 +126,4 @@
 </script>
 
 <style scoped>
-    .errors {
-        color: red;
-    }
 </style>

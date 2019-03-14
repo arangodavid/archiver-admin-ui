@@ -57,20 +57,20 @@ export default {
 
     //object-configuration
     getSoapObj: () => {
-        return Query('/ui-api/soapObject/getAll', {
+        return Query('/ui-api/soapObject/getAll', { //Endpoint to be updated
             method: 'GET'
         });
     },
 
     saveSoapObj: (data) => {
-        return Query('/ui-api/soapObject/save', {
+        return Query('/ui-api/soapObject/save', { //Endpoint to be updated
             method: 'POST',
             body: data
         });
     },
 
     deleteSoapObj: (data) => {
-        return Query('/ui-api/soapObject/delete', {
+        return Query('/ui-api/soapObject/delete', { //Endpoint to be updated
             method: 'POST',
             body: data
         });
